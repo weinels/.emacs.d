@@ -24,7 +24,13 @@
 
 ;; programming language hooks
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+;; python hooks
 (add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook
+          (function (lambda ()
+                      (setq indent-tabs-mode nil
+                            tab-width 4))))
 
 ;; add .tpl files to latex mode
 (add-to-list 'auto-mode-alist '("\\.tpl\\'" . latex-mode))
