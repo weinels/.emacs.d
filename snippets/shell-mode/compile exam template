@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: compile exam template
+# key: forp
+# --
+for f in page*.py; python3 $f; end
