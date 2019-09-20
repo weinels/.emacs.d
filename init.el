@@ -52,7 +52,7 @@
  '(font-lock-function-name-face ((t (:foreground "color-208"))))
  '(font-lock-keyword-face ((t (:foreground "color-201"))))
  '(font-lock-string-face ((t (:foreground "brightyellow"))))
- '(font-lock-type-face ((t (:foreground "color-82"))))
+ '(font-lock-type-face ((t (:foreground "color-40"))))
  '(font-lock-variable-name-face ((t (:foreground "color-197"))))
  '(helm-candidate-number ((t nil)))
  '(helm-selection ((t (:background "yellow" :foreground "black"))))
