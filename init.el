@@ -40,12 +40,20 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(helm-mode t))
+ '(helm-mode t)
+ '(package-selected-packages (quote (rainbow-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(font-lock-comment-face ((t (:foreground "brightyellow" :weight bold))))
+ '(font-lock-constant-face ((t (:foreground "color-123"))))
+ '(font-lock-function-name-face ((t (:foreground "color-208"))))
+ '(font-lock-keyword-face ((t (:foreground "color-201"))))
+ '(font-lock-string-face ((t (:foreground "brightyellow"))))
+ '(font-lock-type-face ((t (:foreground "color-82"))))
+ '(font-lock-variable-name-face ((t (:foreground "color-197"))))
  '(helm-candidate-number ((t nil)))
  '(helm-selection ((t (:background "yellow" :foreground "black"))))
  '(mode-line ((t (:background "grey90" :foreground "black" :box (:line-width -1 :style released-button)))))
