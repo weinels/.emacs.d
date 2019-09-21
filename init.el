@@ -40,9 +40,6 @@
 	     "~/.emacs.d/ecb-master")
 (require 'ecb)
 
-;; add any custom el-get recipes
-(add-to-list 'el-get-recipe-path "~/.emacs.d/recipes")
-
 ;; use helm for some common tasks
 (global-set-key (kbd "M-x") #'helm-M-x)
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
