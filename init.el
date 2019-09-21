@@ -9,10 +9,39 @@
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
+
+;; el-get installed packages.
+;; to get list:
+;; M-x ielm
+;; `(setq my-packages
+;;              ',(mapcar #'el-get-as-symbol
+;;                        (el-get-list-package-names-with-status "installed")))
+
 (setq my-packages
-      '(auto-compile auto-complete cl-lib ctable deferred el-get emacs-async epc fuzzy helm jedi packed popup python-environment yasnippet yasnippet-snippets))
+      '(auto-complete cl-lib ctable deferred el-get emacs-async epc fuzzy helm jedi package packed popup python-environment rainbow-mode yasnippet yasnippet-snippets))
       
 (el-get 'sync my-packages)
+
+;; ITERM2 MOUSE SUPPORT
+(unless window-system
+      (require 'mouse)
+      (xterm-mouse-mode t)
+      (global-set-key [mouse-4] (lambda ()
+				  (interactive)
+				  (scroll-down 1)))
+      (global-set-key [mouse-5] (lambda ()
+				  (interactive)
+				  (scroll-up 1)))
+      (defun track-mouse (e)) 
+      (setq mouse-sel-mode t))
+
+;; load ecb (el-get version is broken right now)
+(add-to-list 'load-path
+	     "~/.emacs.d/ecb-master")
+(require 'ecb)
+
+;; add any custom el-get recipes
+(add-to-list 'el-get-recipe-path "~/.emacs.d/recipes")
 
 ;; use helm for some common tasks
 (global-set-key (kbd "M-x") #'helm-M-x)
@@ -43,6 +72,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ecb-options-version "2.50")
  '(helm-mode t)
  '(package-selected-packages (quote (rainbow-mode)))
  '(scroll-error-top-bottom t))
