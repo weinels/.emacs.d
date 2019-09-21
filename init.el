@@ -22,7 +22,10 @@
 ;; enable yas snippets
 (yas-global-mode 1)
 
-;; programming language hooks
+;; display line numbers in program mode
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+;; spell check strings and comments in program mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 ;; python hooks
@@ -56,6 +59,7 @@
  '(font-lock-variable-name-face ((t (:foreground "color-197"))))
  '(helm-candidate-number ((t nil)))
  '(helm-selection ((t (:background "yellow" :foreground "black"))))
+ '(line-number ((t (:foreground "color-250"))))
  '(mode-line ((t (:background "grey90" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(mode-line-inactive ((t (:inherit mode-line :background "grey75" :foreground "grey20" :box (:line-width -1 :color "grey75") :weight light))))
  '(region ((t (:background "lightgoldenrod2" :foreground "black")))))
