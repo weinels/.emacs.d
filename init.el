@@ -35,15 +35,14 @@
       (defun track-mouse (e)) 
       (setq mouse-sel-mode t))
 
-;; load ecb (el-get version is broken right now)
-(add-to-list 'load-path
-	     "~/.emacs.d/ecb-master")
-(require 'ecb)
-
 ;; use helm for some common tasks
 (global-set-key (kbd "M-x") #'helm-M-x)
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
+
+;; since helm is installed, no need for a list buffers command
+(global-set-key (kbd "C-x C-b") #'helm-buffers-list)
+(global-set-key (kbd "C-x b") #'helm-buffers-list)
 
 ;; enable yas snippets
 (yas-global-mode 1)
@@ -69,8 +68,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ecb-auto-update-methods-after-save t)
- '(ecb-options-version "2.50")
+ '(global-semantic-idle-scheduler-mode nil)
  '(helm-mode t)
  '(package-selected-packages (quote (rainbow-mode)))
  '(scroll-error-top-bottom t))
