@@ -40,6 +40,9 @@
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
 
+;; set shortcut for listing python methods
+(global-set-key (kbd "C-x m") #'helm-occur)
+
 ;; since helm is installed, no need for a list buffers command
 (global-set-key (kbd "C-x C-b") #'helm-buffers-list)
 (global-set-key (kbd "C-x b") #'helm-buffers-list)
