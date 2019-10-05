@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: randint
+# key: randint
+# --
+randint($1, $2, zero=$3)
