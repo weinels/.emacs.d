@@ -18,7 +18,7 @@
 ;;                        (el-get-list-package-names-with-status "installed")))
 
 (setq my-packages
-      '(auto-complete cl-lib ctable deferred el-get emacs-async epc fuzzy helm jedi package packed popup python-environment rainbow-mode yasnippet yasnippet-snippets))
+      '(auto-complete cl-lib ctable deferred el-get emacs-async epc fuzzy helm jedi package packed popup python-environment rainbow-mode yasnippet yasnippet-snippets exec-path-from-shell))
       
 (el-get 'sync my-packages)
 
@@ -34,6 +34,9 @@
 				  (scroll-up 1)))
       (defun track-mouse (e)) 
       (setq mouse-sel-mode t))
+
+;; set dictionary
+(ispell-local-dictionary . "american")
 
 ;; use helm for some common tasks
 (global-set-key (kbd "M-x") #'helm-M-x)
