@@ -35,9 +35,6 @@
       (defun track-mouse (e)) 
       (setq mouse-sel-mode t))
 
-;; set dictionary
-(ispell-local-dictionary . "american")
-
 ;; use helm for some common tasks
 (global-set-key (kbd "M-x") #'helm-M-x)
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
