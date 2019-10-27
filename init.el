@@ -18,7 +18,7 @@
 ;;                        (el-get-list-package-names-with-status "installed")))
 
 (setq my-packages
-      '(auto-complete cl-lib ctable deferred el-get emacs-async epc fuzzy helm jedi package packed popup python-environment rainbow-mode yasnippet yasnippet-snippets))
+      '(auto-complete cl-lib ctable deferred el-get emacs-async epc fuzzy helm jedi package packed popup python-environment rainbow-mode yasnippet yasnippet-snippets exec-path-from-shell))
       
 (el-get 'sync my-packages)
 
