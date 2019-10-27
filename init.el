@@ -35,6 +35,15 @@
       (defun track-mouse (e)) 
       (setq mouse-sel-mode t))
 
+;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs-backups/.
+(custom-set-variables
+  '(auto-save-file-name-transforms '((".*" "~/.emacs-backups/autosaves/\\1" t)))
+  '(backup-directory-alist '((".*" . "~/.emacs-backups/backups/"))))
+
+;; create the autosave dir if necessary, since emacs won't.
+(make-directory "~/.emacs-backups/autosaves/" t)
+
+
 ;; use helm for some common tasks
 (global-set-key (kbd "M-x") #'helm-M-x)
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
@@ -89,7 +98,9 @@
  '(font-lock-type-face ((t (:foreground "color-40"))))
  '(font-lock-variable-name-face ((t (:foreground "color-197"))))
  '(helm-candidate-number ((t nil)))
+ '(helm-match-item ((t (:background "brightmagenta" :foreground "black"))))
  '(helm-selection ((t (:background "yellow" :foreground "black"))))
+ '(helm-selection-line ((t (:background "color-172" :foreground "black"))))
  '(line-number ((t (:foreground "color-250"))))
  '(mode-line ((t (:background "grey90" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(mode-line-inactive ((t (:inherit mode-line :background "grey75" :foreground "grey20" :box (:line-width -1 :color "grey75") :weight light))))
