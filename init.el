@@ -18,7 +18,7 @@
 ;;                        (el-get-list-package-names-with-status "installed")))
 
 (setq my-packages
-      '(auto-complete cl-lib ctable deferred el-get emacs-async epc fuzzy helm jedi package packed popup python-environment rainbow-mode yasnippet yasnippet-snippets exec-path-from-shell))
+      '(auto-complete cl-lib ctable deferred el-get emacs-async epc exec-path-from-shell fuzzy helm highlight-indentation jedi package packed popup python-environment rainbow-mode yasnippet yasnippet-snippets))
       
 (el-get 'sync my-packages)
 
@@ -37,12 +37,20 @@
 
 ;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs-backups/.
 (custom-set-variables
-  '(auto-save-file-name-transforms '((".*" "~/.emacs-backups/autosaves/\\1" t)))
-  '(backup-directory-alist '((".*" . "~/.emacs-backups/backups/"))))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(auto-save-file-name-transforms (quote ((".*" "~/.emacs-backups/autosaves/\\1" t))))
+ '(backup-directory-alist (quote ((".*" . "~/.emacs-backups/backups/"))))
+ '(global-semantic-idle-scheduler-mode nil)
+ '(helm-mode t)
+ '(highlight-indentation-blank-lines t)
+ '(package-selected-packages (quote (rainbow-mode)))
+ '(scroll-error-top-bottom t))
 
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs-backups/autosaves/" t)
-
 
 ;; use helm for some common tasks
 (global-set-key (kbd "M-x") #'helm-M-x)
@@ -65,6 +73,9 @@
 ;; spell check strings and comments in program mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
+;; use indent highlight in the following modes
+(add-hook 'python-mode-hook 'highlight-indentation-mode)
+
 ;; python hooks
 (add-hook 'python-mode-hook 'jedi:setup)
 (add-hook 'python-mode-hook
@@ -75,15 +86,7 @@
 ;; add .tpl files to latex mode
 (add-to-list 'auto-mode-alist '("\\.tpl\\'" . latex-mode))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(global-semantic-idle-scheduler-mode nil)
- '(helm-mode t)
- '(package-selected-packages (quote (rainbow-mode)))
- '(scroll-error-top-bottom t))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -101,6 +104,8 @@
  '(helm-match-item ((t (:background "brightmagenta" :foreground "black"))))
  '(helm-selection ((t (:background "yellow" :foreground "black"))))
  '(helm-selection-line ((t (:background "color-172" :foreground "black"))))
+ '(highlight-indentation-current-column-face ((t (:background "color-69"))))
+ '(highlight-indentation-face ((t (:background "#125d8c"))))
  '(line-number ((t (:foreground "color-250"))))
  '(mode-line ((t (:background "grey90" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(mode-line-inactive ((t (:inherit mode-line :background "grey75" :foreground "grey20" :box (:line-width -1 :color "grey75") :weight light))))
