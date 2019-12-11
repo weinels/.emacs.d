@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: addtag
+# key: addtag
+# --
+self.add_tag('$1', latex.string($0))

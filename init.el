@@ -65,6 +65,7 @@
 (global-set-key (kbd "C-x b") #'helm-buffers-list)
 
 ;; enable yas snippets
+(require 'yasnippet)
 (yas-global-mode 1)
 
 ;; display line numbers in program mode

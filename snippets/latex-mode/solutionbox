@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: solutionbox
+# key: solutionbox
+# --
+\begin{solutionbox}{\stretch{$1}}
+  $0
+\end{solutionbox}
